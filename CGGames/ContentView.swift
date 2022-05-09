@@ -12,11 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         List {
-            ForEach(viewModel.games) { game in
-                GameRowView(game: game.title)
+            ForEach(viewModel.platforms) { platform in
+                GameRowView(game: platform.name)
             }
         }.task {
-            await viewModel.listGames()
+            await viewModel.listPlatforms()
         }
       }
 }
