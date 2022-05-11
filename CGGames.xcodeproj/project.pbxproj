@@ -22,6 +22,9 @@
 		8E7C7563282B3C9C0016067A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C7562282B3C9C0016067A /* ProfileView.swift */; };
 		8E7C7566282B44F60016067A /* StatefulTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 8E7C7565282B44F60016067A /* StatefulTabView */; };
 		8E7C7568282B4DAC0016067A /* GameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C7567282B4DAC0016067A /* GameCreator.swift */; };
+		8E7C756A282B4F150016067A /* GabeNewell.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E7C7569282B4F150016067A /* GabeNewell.json */; };
+		8E7C756F282B4FF40016067A /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C756E282B4FF40016067A /* JsonParser.swift */; };
+		8E7C7571282B53380016067A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C7570282B53380016067A /* ProfileViewModel.swift */; };
 		8EBE42AA2828D9FF0095767A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE42A92828D9FF0095767A /* Config.swift */; };
 		8EBE42AD2828DB230095767A /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE42AC2828DB230095767A /* GameService.swift */; };
 		8EBE42AF2828DCFE0095767A /* GamePlatformResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE42AE2828DCFE0095767A /* GamePlatformResponse.swift */; };
@@ -62,6 +65,9 @@
 		8E7C755D282B36CD0016067A /* GamePlatformsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlatformsView.swift; sourceTree = "<group>"; };
 		8E7C7562282B3C9C0016067A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8E7C7567282B4DAC0016067A /* GameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreator.swift; sourceTree = "<group>"; };
+		8E7C7569282B4F150016067A /* GabeNewell.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GabeNewell.json; sourceTree = "<group>"; };
+		8E7C756E282B4FF40016067A /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
+		8E7C7570282B53380016067A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8EBE42A92828D9FF0095767A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8EBE42AC2828DB230095767A /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		8EBE42AE2828DCFE0095767A /* GamePlatformResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlatformResponse.swift; sourceTree = "<group>"; };
@@ -119,10 +125,12 @@
 				8E00FDFE2828C77900190DF2 /* Assets.xcassets */,
 				8E00FDFA2828C77900190DF2 /* CGGamesApp.swift */,
 				8EBE42A92828D9FF0095767A /* Config.swift */,
+				8E7C7569282B4F150016067A /* GabeNewell.json */,
 				8E00FE282828CE0800190DF2 /* Model */,
 				8EBE42A52828D1230095767A /* Network */,
 				8E00FE002828C77900190DF2 /* Preview Content */,
 				8E7C755F282B3C4A0016067A /* Screens */,
+				8E7C756D282B4FE60016067A /* Utils */,
 				8E7C755C282B32A20016067A /* View */,
 			);
 			path = CGGames;
@@ -194,8 +202,17 @@
 			isa = PBXGroup;
 			children = (
 				8E7C7562282B3C9C0016067A /* ProfileView.swift */,
+				8E7C7570282B53380016067A /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		8E7C756D282B4FE60016067A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8E7C756E282B4FF40016067A /* JsonParser.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		8EBE42A52828D1230095767A /* Network */ = {
@@ -334,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E00FE022828C77900190DF2 /* Preview Assets.xcassets in Resources */,
+				8E7C756A282B4F150016067A /* GabeNewell.json in Resources */,
 				8E00FDFF2828C77900190DF2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +385,8 @@
 				8E7C755B282B30660016067A /* GamePlatform.swift in Sources */,
 				8EBE42AF2828DCFE0095767A /* GamePlatformResponse.swift in Sources */,
 				8EBE42AA2828D9FF0095767A /* Config.swift in Sources */,
+				8E7C7571282B53380016067A /* ProfileViewModel.swift in Sources */,
+				8E7C756F282B4FF40016067A /* JsonParser.swift in Sources */,
 				8E00FE272828CBC700190DF2 /* GameRowView.swift in Sources */,
 				8E00FE252828C83D00190DF2 /* GamesViewModel.swift in Sources */,
 				8E7C7563282B3C9C0016067A /* ProfileView.swift in Sources */,

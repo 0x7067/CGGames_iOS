@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GamePlatformsView: View {
     @StateObject private var viewModel = GamesViewModel()
-    
+
     var body: some View {
         List {
             ForEach(viewModel.platforms) { platform in

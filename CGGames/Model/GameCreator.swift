@@ -21,3 +21,16 @@ struct GameCreator: Codable {
         case positions, games
     }
 }
+
+extension GameCreator {
+    init() {
+        id = 0
+        name = ""
+        slug = ""
+        image = ""
+        imageBackground = ""
+        gamesCount = 0
+        positions = []
+        games = []
+    }
+}

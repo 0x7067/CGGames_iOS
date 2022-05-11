@@ -23,7 +23,7 @@ class GamesViewModel: ObservableObject {
         platforms = data
     }
 
-    func requestPlatforms() async throws -> [GamePlatform] {
+    private func requestPlatforms() async throws -> [GamePlatform] {
         do {
             let response = try await gameService.fetchGamePlatforms()
             return response.map { gamePlatformResponse in
