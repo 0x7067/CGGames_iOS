@@ -104,11 +104,11 @@
 		8E00FDEE2828C77900190DF2 = {
 			isa = PBXGroup;
 			children = (
-				8ED632A3282C132700015725 /* Rawg-Info.plist */,
 				8E00FDF92828C77900190DF2 /* CGGames */,
 				8E00FE0A2828C77900190DF2 /* CGGamesTests */,
 				8E00FE142828C77900190DF2 /* CGGamesUITests */,
 				8E00FDF82828C77900190DF2 /* Products */,
+				8ED632A3282C132700015725 /* Rawg-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};

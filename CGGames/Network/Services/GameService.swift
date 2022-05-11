@@ -8,9 +8,8 @@
 import Foundation
 
 class GameService {
-    
     let appConfig = AppConfig()
-    
+
     enum ApiError: Error {
         case invalidURL
     }
@@ -28,10 +27,10 @@ class GameService {
         let response = try JSONDecoder().decode(APIResult.self, from: data)
         return response.results
     }
-    
+
     private func getUrlForRequest(_ url: String, parameters: [String: String]) -> URL? {
         var components = URLComponents(string: url)!
-        components.queryItems = parameters.map { (key, value) in
+        components.queryItems = parameters.map { key, value in
             URLQueryItem(name: key, value: value)
         }
         return components.url
