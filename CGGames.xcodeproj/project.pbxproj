@@ -25,9 +25,10 @@
 		8E7C756A282B4F150016067A /* GabeNewell.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E7C7569282B4F150016067A /* GabeNewell.json */; };
 		8E7C756F282B4FF40016067A /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C756E282B4FF40016067A /* JsonParser.swift */; };
 		8E7C7571282B53380016067A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C7570282B53380016067A /* ProfileViewModel.swift */; };
-		8EBE42AA2828D9FF0095767A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE42A92828D9FF0095767A /* Config.swift */; };
+		8EBE42AA2828D9FF0095767A /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE42A92828D9FF0095767A /* AppConfig.swift */; };
 		8EBE42AD2828DB230095767A /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE42AC2828DB230095767A /* GameService.swift */; };
 		8EBE42AF2828DCFE0095767A /* GamePlatformResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE42AE2828DCFE0095767A /* GamePlatformResponse.swift */; };
+		8ED632A4282C132700015725 /* Rawg-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ED632A3282C132700015725 /* Rawg-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +69,10 @@
 		8E7C7569282B4F150016067A /* GabeNewell.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GabeNewell.json; sourceTree = "<group>"; };
 		8E7C756E282B4FF40016067A /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		8E7C7570282B53380016067A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		8EBE42A92828D9FF0095767A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		8EBE42A92828D9FF0095767A /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		8EBE42AC2828DB230095767A /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		8EBE42AE2828DCFE0095767A /* GamePlatformResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlatformResponse.swift; sourceTree = "<group>"; };
+		8ED632A3282C132700015725 /* Rawg-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rawg-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		8E00FDEE2828C77900190DF2 = {
 			isa = PBXGroup;
 			children = (
+				8ED632A3282C132700015725 /* Rawg-Info.plist */,
 				8E00FDF92828C77900190DF2 /* CGGames */,
 				8E00FE0A2828C77900190DF2 /* CGGamesTests */,
 				8E00FE142828C77900190DF2 /* CGGamesUITests */,
@@ -124,7 +127,7 @@
 			children = (
 				8E00FDFE2828C77900190DF2 /* Assets.xcassets */,
 				8E00FDFA2828C77900190DF2 /* CGGamesApp.swift */,
-				8EBE42A92828D9FF0095767A /* Config.swift */,
+				8EBE42A92828D9FF0095767A /* AppConfig.swift */,
 				8E7C7569282B4F150016067A /* GabeNewell.json */,
 				8E00FE282828CE0800190DF2 /* Model */,
 				8EBE42A52828D1230095767A /* Network */,
@@ -353,6 +356,7 @@
 				8E00FE022828C77900190DF2 /* Preview Assets.xcassets in Resources */,
 				8E7C756A282B4F150016067A /* GabeNewell.json in Resources */,
 				8E00FDFF2828C77900190DF2 /* Assets.xcassets in Resources */,
+				8ED632A4282C132700015725 /* Rawg-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +388,7 @@
 				8E00FDFB2828C77900190DF2 /* CGGamesApp.swift in Sources */,
 				8E7C755B282B30660016067A /* GamePlatform.swift in Sources */,
 				8EBE42AF2828DCFE0095767A /* GamePlatformResponse.swift in Sources */,
-				8EBE42AA2828D9FF0095767A /* Config.swift in Sources */,
+				8EBE42AA2828D9FF0095767A /* AppConfig.swift in Sources */,
 				8E7C7571282B53380016067A /* ProfileViewModel.swift in Sources */,
 				8E7C756F282B4FF40016067A /* JsonParser.swift in Sources */,
 				8E00FE272828CBC700190DF2 /* GameRowView.swift in Sources */,

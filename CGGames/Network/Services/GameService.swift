@@ -8,12 +8,15 @@
 import Foundation
 
 class GameService {
+    
+    let appConfig = AppConfig()
+    
     enum ApiError: Error {
         case invalidURL
     }
 
     func fetchGamePlatforms() async throws -> [GamePlatformResponse] {
-        let urlString = "\(AppConfig.BASE_URL)platforms?key=\(AppConfig.API_KEY)"
+        let urlString = "\(AppConfig.BASE_URL)platforms?key=\(appConfig.apiKey)"
 
         guard let url = URL(string: urlString) else {
             throw ApiError.invalidURL
