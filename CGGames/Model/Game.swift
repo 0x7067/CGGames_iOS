@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Game: Identifiable {
-    var id = UUID()
-    var title: String
+struct Game: Codable {
+    let id: Int
+    let slug, name: String
+    let added: Int?
 }

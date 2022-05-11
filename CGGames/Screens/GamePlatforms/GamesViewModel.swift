@@ -14,19 +14,6 @@ class GamesViewModel: ObservableObject {
     @Published var games: [Game] = []
     @Published var platforms: [GamePlatform] = []
 
-    func listGames() async {
-        guard let data = try? await requestGames() else {
-            games = []
-            return
-        }
-
-        games = data
-    }
-
-    func requestGames() async throws -> [Game] {
-        [Game(title: "Dark Souls 1"), Game(title: "Dark Souls 2"), Game(title: "Dark Souls 3")]
-    }
-
     func listPlatforms() async {
         guard let data = try? await requestPlatforms() else {
             platforms = []
