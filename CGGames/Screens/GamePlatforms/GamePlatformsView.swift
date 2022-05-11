@@ -11,12 +11,21 @@ struct GamePlatformsView: View {
     @StateObject private var viewModel = GamesViewModel()
 
     var body: some View {
-        List {
-            ForEach(viewModel.platforms) { platform in
-                GameRowView(platform: platform)
+        switch viewModel.state {
+        case .loading:
+            ProgressView().onAppear().task {
+                await viewModel.requestPlatforms()
             }
-        }.task {
-            await viewModel.listPlatforms()
+        case .error:
+            Text("Something wrong happened")
+        case let .success(data: data):
+            List {
+                ForEach(data) { platform in
+                    GameRowView(platform: platform)
+                }
+            }.refreshable {
+                await viewModel.requestPlatforms()
+            }
         }
     }
 }

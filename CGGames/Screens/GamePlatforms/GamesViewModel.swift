@@ -11,27 +11,23 @@ import Foundation
 class GamesViewModel: ObservableObject {
     let gameService = GameService()
 
-    @Published var games: [Game] = []
-    @Published var platforms: [GamePlatform] = []
-
-    func listPlatforms() async {
-        guard let data = try? await requestPlatforms() else {
-            platforms = []
-            return
-        }
-
-        platforms = data
+    enum State {
+        case loading
+        case success(data: [GamePlatform])
+        case error(message: String)
     }
 
-    private func requestPlatforms() async throws -> [GamePlatform] {
+    @Published var state: State = .loading
+
+    func requestPlatforms() async {
         do {
             let response = try await gameService.fetchGamePlatforms()
-            return response.map { gamePlatformResponse in
+            let result = response.map { gamePlatformResponse in
                 GamePlatform(id: gamePlatformResponse.id, name: gamePlatformResponse.name, gameCount: gamePlatformResponse.games_count)
             }
+            state = .success(data: result)
         } catch {
-            print("Fetching platforms failed with error \(error)")
+            state = .error(message: error.localizedDescription)
         }
-        return []
     }
 }

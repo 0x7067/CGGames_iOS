@@ -8,10 +8,6 @@
 import Foundation
 
 class GameService {
-    let DEFAULT_PAGE_SIZE = 20
-    let DEFAULT_PAGE = 0
-    let DEFAULT_ORDERING = "name"
-
     enum ApiError: Error {
         case invalidURL
     }
