@@ -6,20 +6,25 @@
 //
 
 import SwiftUI
+import StatefulTabView
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            GamePlatformsView()
-                .tabItem {
-                    Label("Platforms", systemImage: "gamecontroller")
+        StatefulTabView {
+            Tab(title: "Platforms", systemImageName: "gamecontroller") {
+                NavigationView {
+                    GamePlatformsView()
+                    .navigationBarTitle("Gaming Platforms")
                 }
-            ProfileView()
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
+            }
+            Tab(title: "Profile", systemImageName: "person") {
+                ProfileView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person")
+            }
         }
     }
+}
 }
 
 struct ContentView_Previews: PreviewProvider {

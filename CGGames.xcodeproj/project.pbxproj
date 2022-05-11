@@ -20,6 +20,7 @@
 		8E7C755B282B30660016067A /* GamePlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C755A282B30660016067A /* GamePlatform.swift */; };
 		8E7C755E282B36CD0016067A /* GamePlatformsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C755D282B36CD0016067A /* GamePlatformsView.swift */; };
 		8E7C7563282B3C9C0016067A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C7562282B3C9C0016067A /* ProfileView.swift */; };
+		8E7C7566282B44F60016067A /* StatefulTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 8E7C7565282B44F60016067A /* StatefulTabView */; };
 		8EBE42AA2828D9FF0095767A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE42A92828D9FF0095767A /* Config.swift */; };
 		8EBE42AD2828DB230095767A /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE42AC2828DB230095767A /* GameService.swift */; };
 		8EBE42AF2828DCFE0095767A /* GamePlatformResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE42AE2828DCFE0095767A /* GamePlatformResponse.swift */; };
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7C7566282B44F60016067A /* StatefulTabView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +236,9 @@
 			dependencies = (
 			);
 			name = CGGames;
+			packageProductDependencies = (
+				8E7C7565282B44F60016067A /* StatefulTabView */,
+			);
 			productName = CGGames;
 			productReference = 8E00FDF72828C77900190DF2 /* CGGames.app */;
 			productType = "com.apple.product-type.application";
@@ -306,6 +311,9 @@
 				Base,
 			);
 			mainGroup = 8E00FDEE2828C77900190DF2;
+			packageReferences = (
+				8E7C7564282B44F60016067A /* XCRemoteSwiftPackageReference "StatefulTabView" */,
+			);
 			productRefGroup = 8E00FDF82828C77900190DF2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -683,6 +691,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E7C7564282B44F60016067A /* XCRemoteSwiftPackageReference "StatefulTabView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NicholasBellucci/StatefulTabView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E7C7565282B44F60016067A /* StatefulTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E7C7564282B44F60016067A /* XCRemoteSwiftPackageReference "StatefulTabView" */;
+			productName = StatefulTabView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8E00FDEF2828C77900190DF2 /* Project object */;
 }
