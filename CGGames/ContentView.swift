@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = GamesViewModel()
-
     var body: some View {
-        List {
-            ForEach(viewModel.platforms) { platform in
-                GameRowView(platform: platform)
-            }
-        }.task {
-            await viewModel.listPlatforms()
+        TabView {
+            GamePlatformsView()
+                .tabItem {
+                    Label("Platforms", systemImage: "gamecontroller")
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
         }
     }
 }
