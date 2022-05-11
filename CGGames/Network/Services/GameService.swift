@@ -16,9 +16,9 @@ class GameService {
     }
 
     func fetchGamePlatforms() async throws -> [GamePlatformResponse] {
-        let urlString = "\(AppConfig.BASE_URL)platforms?key=\(appConfig.apiKey)"
+        let urlString = "\(AppConfig.BASE_URL)platforms"
 
-        guard let url = URL(string: urlString) else {
+        guard let url = getUrlForRequest(urlString, parameters: ["key": appConfig.apiKey]) else {
             throw ApiError.invalidURL
         }
 
@@ -27,5 +27,13 @@ class GameService {
 
         let response = try JSONDecoder().decode(APIResult.self, from: data)
         return response.results
+    }
+    
+    private func getUrlForRequest(_ url: String, parameters: [String: String]) -> URL? {
+        var components = URLComponents(string: url)!
+        components.queryItems = parameters.map { (key, value) in
+            URLQueryItem(name: key, value: value)
+        }
+        return components.url
     }
 }
