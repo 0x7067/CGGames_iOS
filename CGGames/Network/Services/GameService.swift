@@ -14,9 +14,14 @@ class GameService {
         case invalidURL
         case invalidResponse(message: String)
     }
+    
+    enum ApiPath {
+        case platforms
+        case creators
+    }
 
     func fetchGamePlatforms() async throws -> [GamePlatformResponse] {
-        let urlString = "\(AppConfig.BASE_URL)platforms"
+        let urlString = "\(AppConfig.BASE_URL)\(getApiPath(.platforms))"
 
         guard let url = getUrlForRequest(urlString, parameters: ["key": appConfig.apiKey]) else {
             throw ApiError.invalidURL
@@ -30,6 +35,11 @@ class GameService {
             return try JSONDecoder().decode(APIResult.self, from: data).results
         }
     }
+    
+    func getGameCreators() {
+        let urlString = "\(AppConfig.BASE_URL)\(getApiPath(.creators))"
+        // Rest of the function
+    }
 
     private func getUrlForRequest(_ url: String, parameters: [String: String]) -> URL? {
         var components = URLComponents(string: url)!
@@ -37,5 +47,14 @@ class GameService {
             URLQueryItem(name: key, value: value)
         }
         return components.url
+    }
+    
+    private func getApiPath(_ path: ApiPath) -> String {
+        switch (path) {
+        case .platforms:
+            return "platforms"
+        case .creators:
+            return "creators"
+        }
     }
 }
