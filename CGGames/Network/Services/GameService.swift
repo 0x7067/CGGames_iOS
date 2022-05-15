@@ -12,6 +12,7 @@ class GameService {
 
     enum ApiError: Error {
         case invalidURL
+        case invalidResponse(message: String)
     }
 
     func fetchGamePlatforms() async throws -> [GamePlatformResponse] {
@@ -21,11 +22,13 @@ class GameService {
             throw ApiError.invalidURL
         }
 
-        print(urlString)
-        let (data, _) = try await URLSession.shared.data(from: url)
-
-        let response = try JSONDecoder().decode(APIResult.self, from: data)
-        return response.results
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+            throw ApiError.invalidResponse(message: httpResponse.statusCode.description)
+        } else {
+            return try JSONDecoder().decode(APIResult.self, from: data).results
+        }
     }
 
     private func getUrlForRequest(_ url: String, parameters: [String: String]) -> URL? {

@@ -26,8 +26,12 @@ class GamesViewModel: ObservableObject {
                 GamePlatform(id: gamePlatformResponse.id, name: gamePlatformResponse.name, gameCount: gamePlatformResponse.games_count)
             }
             state = .success(data: result)
+        } catch GameService.ApiError.invalidResponse(let message) {
+            state = .error(message: message)
+        } catch GameService.ApiError.invalidURL {
+            state = .error(message: "Invalid URL!")
         } catch {
-            state = .error(message: error.localizedDescription)
+            state = .error(message: "Something wrong happened")
         }
     }
 }

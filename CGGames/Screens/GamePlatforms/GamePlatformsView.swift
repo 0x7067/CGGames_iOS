@@ -16,8 +16,8 @@ struct GamePlatformsView: View {
             ProgressView().onAppear().task {
                 await viewModel.requestPlatforms()
             }
-        case .error:
-            Text("Something wrong happened")
+        case let .error(message):
+            Text(message)
         case let .success(data: data):
             List {
                 ForEach(data) { platform in
