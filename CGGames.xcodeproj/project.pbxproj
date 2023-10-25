@@ -17,6 +17,8 @@
 		8E00FE252828C83D00190DF2 /* GamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00FE242828C83D00190DF2 /* GamesViewModel.swift */; };
 		8E00FE272828CBC700190DF2 /* GameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00FE262828CBC700190DF2 /* GameRowView.swift */; };
 		8E00FE2A2828CE1400190DF2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00FE292828CE1400190DF2 /* Game.swift */; };
+		8E281B102AE8CA8800EAC824 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8E281B0F2AE8CA8800EAC824 /* ComposableArchitecture */; };
+		8E281B122AE8CABB00EAC824 /* GameFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E281B112AE8CABB00EAC824 /* GameFeature.swift */; };
 		8E7C755B282B30660016067A /* GamePlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C755A282B30660016067A /* GamePlatform.swift */; };
 		8E7C755E282B36CD0016067A /* GamePlatformsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C755D282B36CD0016067A /* GamePlatformsView.swift */; };
 		8E7C7563282B3C9C0016067A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C7562282B3C9C0016067A /* ProfileView.swift */; };
@@ -62,6 +64,7 @@
 		8E00FE242828C83D00190DF2 /* GamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewModel.swift; sourceTree = "<group>"; };
 		8E00FE262828CBC700190DF2 /* GameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRowView.swift; sourceTree = "<group>"; };
 		8E00FE292828CE1400190DF2 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		8E281B112AE8CABB00EAC824 /* GameFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFeature.swift; sourceTree = "<group>"; };
 		8E7C755A282B30660016067A /* GamePlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlatform.swift; sourceTree = "<group>"; };
 		8E7C755D282B36CD0016067A /* GamePlatformsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlatformsView.swift; sourceTree = "<group>"; };
 		8E7C7562282B3C9C0016067A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E281B102AE8CA8800EAC824 /* ComposableArchitecture in Frameworks */,
 				8E7C7566282B44F60016067A /* StatefulTabView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +201,7 @@
 			children = (
 				8E7C755D282B36CD0016067A /* GamePlatformsView.swift */,
 				8E00FE242828C83D00190DF2 /* GamesViewModel.swift */,
+				8E281B112AE8CABB00EAC824 /* GameFeature.swift */,
 			);
 			path = GamePlatforms;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			name = CGGames;
 			packageProductDependencies = (
 				8E7C7565282B44F60016067A /* StatefulTabView */,
+				8E281B0F2AE8CA8800EAC824 /* ComposableArchitecture */,
 			);
 			productName = CGGames;
 			productReference = 8E00FDF72828C77900190DF2 /* CGGames.app */;
@@ -336,6 +342,7 @@
 			mainGroup = 8E00FDEE2828C77900190DF2;
 			packageReferences = (
 				8E7C7564282B44F60016067A /* XCRemoteSwiftPackageReference "StatefulTabView" */,
+				8E281B0E2AE8CA8800EAC824 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 8E00FDF82828C77900190DF2 /* Products */;
 			projectDirPath = "";
@@ -390,6 +397,7 @@
 				8EBE42AF2828DCFE0095767A /* GamePlatformResponse.swift in Sources */,
 				8EBE42AA2828D9FF0095767A /* AppConfig.swift in Sources */,
 				8E7C7571282B53380016067A /* ProfileViewModel.swift in Sources */,
+				8E281B122AE8CABB00EAC824 /* GameFeature.swift in Sources */,
 				8E7C756F282B4FF40016067A /* JsonParser.swift in Sources */,
 				8E00FE272828CBC700190DF2 /* GameRowView.swift in Sources */,
 				8E00FE252828C83D00190DF2 /* GamesViewModel.swift in Sources */,
@@ -553,7 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CGGames/Preview Content\"";
-				DEVELOPMENT_TEAM = H5CA9ER6D3;
+				DEVELOPMENT_TEAM = CK73TEP9E9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -582,7 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CGGames/Preview Content\"";
-				DEVELOPMENT_TEAM = H5CA9ER6D3;
+				DEVELOPMENT_TEAM = CK73TEP9E9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -721,6 +729,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8E281B0E2AE8CA8800EAC824 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 		8E7C7564282B44F60016067A /* XCRemoteSwiftPackageReference "StatefulTabView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NicholasBellucci/StatefulTabView";
@@ -732,6 +748,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8E281B0F2AE8CA8800EAC824 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E281B0E2AE8CA8800EAC824 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
 		8E7C7565282B44F60016067A /* StatefulTabView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8E7C7564282B44F60016067A /* XCRemoteSwiftPackageReference "StatefulTabView" */;

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GamePlatform: Identifiable {
+struct GamePlatform: Identifiable, Equatable {
     var id: Int
     var name: String
     var gameCount: Int

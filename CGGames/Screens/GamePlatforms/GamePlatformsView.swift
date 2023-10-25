@@ -6,26 +6,36 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct GamePlatformsView: View {
-    @StateObject private var viewModel = GamesViewModel()
+    let store: StoreOf<GameFeature>
 
     var body: some View {
-        switch viewModel.state {
-        case .loading:
-            ProgressView().onAppear().task {
-                await viewModel.requestPlatforms()
-            }
-        case let .error(message):
-            Text(message)
-        case let .success(data: data):
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
             List {
-                ForEach(data) { platform in
+                ForEach(viewStore.gamingPlatforms) { platform in
                     GameRowView(platform: platform)
+                        .onTapGesture {
+                            viewStore.send(.gamePlatformTapped(platform))
+                        }
                 }
-            }.refreshable {
-                await viewModel.requestPlatforms()
             }
+            .onAppear {
+                viewStore.send(.onAppear)
+            }
+            .alert(
+              item: viewStore.binding(
+                get: { $0.gamingPlatformAlert.map(GamePlatformAlert.init(title:)) },
+                send: .gamePlatformAlertDismissed
+              ),
+              content: { Alert(title: Text($0.title)) }
+              )
         }
     }
+}
+
+struct GamePlatformAlert: Identifiable {
+  var title: String
+  var id: String { self.title }
 }

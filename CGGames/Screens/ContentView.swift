@@ -7,14 +7,19 @@
 
 import StatefulTabView
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
     var body: some View {
         StatefulTabView {
             Tab(title: "Platforms", systemImageName: "gamecontroller") {
                 NavigationView {
-                    GamePlatformsView()
-                        .navigationBarTitle("Gaming Platforms")
+                    GamePlatformsView(
+                        store: Store(initialState: GameFeature.State(gamingPlatforms: [])) {
+                        GameFeature()
+                      }
+                    )
+                    .navigationBarTitle("Gaming Platforms")
                 }
             }
             Tab(title: "Profile", systemImageName: "person") {
